@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.parrafo-navbar {
+  background-color: pink;
+  margin: 0;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.carritoIcon {
+  display: inline;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.containerNav {
+  background-color: rgb(78, 78, 78);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center
 }
 
-.App-link {
-  color: #61dafb;
+.topnav {
+  margin: 1em;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topnav a {
+  background-color: aqua;
+  margin: 0 1em;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+button {
+  border-style: none;
+  background-color:transparent;
 }
