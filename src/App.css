@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Overpass:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-family: 'Overpass', sans-serif;
 }
 
 .parrafo-navbar {
@@ -43,7 +47,49 @@
   text-transform: uppercase;
 }
 
+.navbar-brand a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ##########--BOTONES--########## */
 button {
   border-style: none;
   background-color:transparent;
 }
+
+.btn-3 {
+  background: rgb(255, 187, 0);
+  background: linear-gradient(0deg, rgba(255, 187, 0) 0%, rgb(255, 185, 33) 100%);
+  width: 100px;
+  height: 35px;
+  line-height: 14px;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.9s;
+  margin: 0px 2px;
+}
+
+.btn-3:hover{
+  background:rgb(38, 156, 83);
+  color: white;
+}
+
+.btn-4 {
+  background: rgb(112, 222, 255);
+  background: linear-gradient(0deg, rgba(112, 222, 255) 0%, rgb(185, 218, 255) 100%);
+  width: 100px;
+  height: 35px;
+  line-height: 14px;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.9s;
+  margin: 0px 2px;
+}
+
+.btn-4:hover{
+  background:rgb(186, 102, 255);
+  color: white;
+}
+/* ##########--BOTONES fin--########## */
+
