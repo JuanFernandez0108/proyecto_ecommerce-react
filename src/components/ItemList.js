@@ -7,6 +7,7 @@ return (
         items.map(item => (
             <Item 
             key={item.id}
+            id={item.id}
             imagen={item.imagen}
             titulo={item.titulo}
             descripcion={item.descripcion}

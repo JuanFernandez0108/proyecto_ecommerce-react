@@ -1,4 +1,4 @@
-import ItemList from '../containers/ItemList';
+import ItemList from '../components/ItemList';
 import customFetch from '../utils/customFetch';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';

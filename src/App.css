@@ -38,7 +38,15 @@
   font-weight: 500;
   font-size: 15px;
   text-transform: uppercase;
+}
 
+.nav-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link a:hover {
+  color:rgb(38, 156, 83);
 }
 
 .navbar-brand {
@@ -93,3 +101,19 @@ button {
 }
 /* ##########--BOTONES fin--########## */
 
+
+
+/* ##########--ITEM DETAIL --########## */
+
+.item_detail {
+  background-color: rgb(255, 168, 168);
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 970px;
+  height: 500px;
+}
+
+.image_box_detail, .image_detail {
+  background-color: aquamarine;
+}
