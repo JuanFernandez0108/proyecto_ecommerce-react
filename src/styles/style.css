@@ -54,3 +54,85 @@ section {
     font-size: 20px;
     color: rgb(41, 187, 41);
   }
+
+
+/* ######## BOTONES SUMAR Y RESTAR ItemCount ############*/
+  .container_botones_itemcount {
+    width: 200px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    left: 200px;
+    bottom: 41px;
+  }
+
+  .btn_sumar, .btn_restar {
+    width: 40px;
+    height: 30px;
+    line-height: 10px;
+    border-radius: 6px;
+    transition-duration: 0.9s;
+    margin: 6px 13px;
+  }
+
+  .btn_sumar {
+    background-color: rgb(92, 173, 92);
+  }
+
+  .btn_sumar:hover {
+    background-color: rgb(92, 192, 92);
+  }
+
+  .btn_restar {
+    background-color: rgb(196, 78, 78);
+  }
+
+  .btn_restar:hover {
+    background-color: rgb(211, 79, 79);
+  }
+
+/* ######## CARRITO VACIO - Carj.js ############*/
+
+.carrito_vacio_text {
+  font-size: 1.5em;
+  text-align: center;
+  list-style: none;
+}
+
+.parrafo_compra_carrito {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: rgb(150, 58, 179);
+  text-shadow: 2px 2px 3px rgb(255, 196, 0);
+}
+
+.btn_seguir_comprando {
+  background: rgb(255, 187, 0);
+  background: linear-gradient(0deg, rgb(255, 187, 0) 0%, rgb(255, 212, 69) 100%);
+  width: 180px;
+  height: 40px;
+  line-height: 14px;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  margin: 40px 0px;
+  position: absolute;
+  left: 45.5%;
+  font-size: 1.2em;
+  color: black;
+}
+
+.btn_seguir_comprando:hover{
+  box-shadow: 0px 0px 6px 2px rgba(110,110,110,0.74);
+  -webkit-box-shadow: 0px 0px 6px 2px rgba(110,110,110,0.74);
+  -moz-box-shadow: 0px 0px 6px 2px rgba(110,110,110,0.74);
+  cursor: pointer;
+}
+
+.btn_seguir_comprando a {
+  text-decoration: none;
+  color: black;
+}

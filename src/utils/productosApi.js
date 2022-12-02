@@ -6,6 +6,7 @@ export const productosApi = [
         titulo: 'Agility Cats',
         descripcion: 'Alimento descripcion 0',
         precio: 500,
+        stock: 100,
         categoryId: 'gatos'
     },
     {
@@ -15,6 +16,7 @@ export const productosApi = [
         titulo: 'Old Prince',
         descripcion: 'Alimento descripcion 01',
         precio: 600,
+        stock: 60,
         categoryId: 'perros'
     },
     {
@@ -24,6 +26,7 @@ export const productosApi = [
         titulo: 'Dog Selection',
         descripcion: 'Alimento descripcion 02',
         precio: 800,
+        stock: 100,
         categoryId: 'perros'
     },
     {
@@ -33,6 +36,7 @@ export const productosApi = [
         titulo: 'Whiskas',
         descripcion: 'Alimento descripcion 03',
         precio: 750,
+        stock: 70,
         categoryId: 'gatos'
     },
     {
@@ -42,6 +46,7 @@ export const productosApi = [
         titulo: 'Purina Dog Chow',
         descripcion: 'Alimento descripcion 04',
         precio: 480,
+        stock: 25,
         categoryId: 'perros'
     },
     {
@@ -51,6 +56,7 @@ export const productosApi = [
         titulo: 'Pedigree Vital',
         descripcion: 'Alimento descripcion 05',
         precio: 660,
+        stock: 40,
         categoryId: 'perros'
     },
     {
@@ -60,6 +66,7 @@ export const productosApi = [
         titulo: 'Nutrique Healthy',
         descripcion: 'Alimento descripcion 06',
         precio: 900,
+        stock: 15,
         categoryId: 'gatos'
     },
     {
@@ -69,6 +76,7 @@ export const productosApi = [
         titulo: 'Purina Cat Chow',
         descripcion: 'Alimento descripcion 07',
         precio: 590,
+        stock: 10,
         categoryId: 'gatos'
     },
     {
@@ -78,6 +86,7 @@ export const productosApi = [
         titulo: 'Kong Classic II',
         descripcion: 'Articulo descripcion 0',
         precio: 1500,
+        stock: 6,
         categoryId: 'articulos'
     },
     {
@@ -87,6 +96,7 @@ export const productosApi = [
         titulo: 'Soga Cancat 5',
         descripcion: 'Articulo descripcion 01',
         precio: 920,
+        stock: 8,
         categoryId: 'articulos'
     }
 ];

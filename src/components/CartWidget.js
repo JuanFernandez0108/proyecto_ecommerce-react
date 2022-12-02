@@ -1,17 +1,17 @@
 import React from 'react'
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { CartContext } from './CartContext';
+import { useContext } from 'react';
 
-function Carrito() {
+const CartWidget = () => {
+  const test = useContext(CartContext);
+
   return (
-    <>
-    
-    <Badge badgeContent={2} color="warning">
+    <Badge badgeContent={test.calcItemsQty()} color="warning">
       <ShoppingCartIcon color="action" />
     </Badge>
-    
-    </>
   )
 }
 
-export default Carrito;
+export default CartWidget;
