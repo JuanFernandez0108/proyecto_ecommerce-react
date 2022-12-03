@@ -11,7 +11,7 @@ const ItemDetail = ({ item }) => {
     const onAdd = (qty) => {
         alert("Seleccionaste " + qty + " productos.");
         setItemCount(qty);
-        addToCart(item)
+        addToCart(item, qty)
     }
 
     return(
@@ -24,11 +24,10 @@ const ItemDetail = ({ item }) => {
                 <p>{item.descripcion}</p>
                 <p>Stock: {item.stock}</p>
                 <span className="price_span_detail">${item.precio}</span>
-                <button className="btn_detail">Agregar al carrito</button>
                 {
                     itemCount === 0
                     ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} />
-                    : <Link to='/cart'><button>Checkout</button></Link>
+                    : <Link to='/cart'><button className="btn_checkout">Checkout</button></Link>
                 }
             </div>
         </div>

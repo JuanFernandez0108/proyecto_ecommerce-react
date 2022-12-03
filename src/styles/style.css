@@ -58,39 +58,36 @@ section {
 
 /* ######## BOTONES SUMAR Y RESTAR ItemCount ############*/
   .container_botones_itemcount {
-    width: 200px;
     font-size: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    left: 200px;
+    align-items: center;
+    left: 143px;
     bottom: 41px;
   }
 
   .btn_sumar, .btn_restar {
-    width: 40px;
-    height: 30px;
+    background-color: rgb(255, 187, 0);
     line-height: 10px;
-    border-radius: 6px;
-    transition-duration: 0.9s;
+    border-radius: 15px;
+    width: 45px;
+    height: 35px;
+    transition-duration: 0.1s;
     margin: 6px 13px;
   }
 
-  .btn_sumar {
-    background-color: rgb(92, 173, 92);
-  }
-
   .btn_sumar:hover {
-    background-color: rgb(92, 192, 92);
-  }
-
-  .btn_restar {
-    background-color: rgb(196, 78, 78);
+    box-shadow: 1px 1px 2px 1px rgba(105,105,105,0.75);
+    -webkit-box-shadow: 1px 1px 2px 1px rgba(105,105,105,0.75);
+    -moz-box-shadow: 1px 1px 2px 1px rgba(105,105,105,0.75);
   }
 
   .btn_restar:hover {
-    background-color: rgb(211, 79, 79);
+    box-shadow: 1px 1px 2px 1px rgba(105,105,105,0.75);
+    -webkit-box-shadow: 1px 1px 2px 1px rgba(105,105,105,0.75);
+    -moz-box-shadow: 1px 1px 2px 1px rgba(105,105,105,0.75);
   }
 
 /* ######## CARRITO VACIO - Carj.js ############*/
@@ -135,4 +132,21 @@ section {
 .btn_seguir_comprando a {
   text-decoration: none;
   color: black;
+}
+
+.btn_checkout {
+  background: linear-gradient(0deg, rgba(255, 187, 0) 0%, rgb(255, 185, 33) 100%);
+  width: 100px;
+  height: 35px;
+  line-height: 14px;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  margin: 75px 2px 0px 2px;
+}
+
+.btn_checkout:hover{
+  box-shadow: 0px 0px 7px 0px rgba(115,115,115,0.75);
+-webkit-box-shadow: 0px 0px 7px 0px rgba(115,115,115,0.75);
+-moz-box-shadow: 0px 0px 7px 0px rgba(115,115,115,0.75);
 }
