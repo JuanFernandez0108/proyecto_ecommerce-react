@@ -98,14 +98,6 @@ section {
   list-style: none;
 }
 
-.parrafo_compra_carrito {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.2em;
-  color: rgb(150, 58, 179);
-  text-shadow: 2px 2px 3px rgb(255, 196, 0);
-}
-
 .btn_seguir_comprando {
   background: rgb(255, 187, 0);
   background: linear-gradient(0deg, rgb(255, 187, 0) 0%, rgb(255, 212, 69) 100%);

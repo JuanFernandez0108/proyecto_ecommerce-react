@@ -99,6 +99,26 @@ button {
   background:rgb(186, 102, 255);
   color: white;
 }
+
+.btn_vaciar_carrito {
+  background: linear-gradient(0deg, rgba(255, 187, 0) 0%, rgb(255, 185, 33) 100%);
+  font-size: 18px;
+  height: 38px;
+  line-height: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+}
+
+.btn_delete {
+  background-color: rgb(255, 187, 0);
+  line-height: 10px;
+  border-radius: 15px;
+  width: 45px;
+  height: 35px;
+  transition-duration: 0.1s;
+  margin: 6px 13px;
+}
 /* ##########--BOTONES fin--########## */
 
 

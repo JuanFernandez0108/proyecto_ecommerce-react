@@ -55,7 +55,7 @@ const Cart = () => {
         {
             test.cartList.length === 0 
             ? <li className="carrito_vacio_text"><SentimentVeryDissatisfiedIcon /> No agregaste ningun producto al carrito <SentimentVeryDissatisfiedIcon /></li>
-            : test.cartList.map(item => <table className="table">
+            : test.cartList.map(item => <table className="table" key={item.id}>
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -63,18 +63,25 @@ const Cart = () => {
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
+                <th><button className="btn_delete" onClick={() => test.deleteItem(item.id)}>x</button></th>
               </tr>
             </thead>
-            <tbody key={item.id}>
+            <tbody>
               <tr>
                 <th scope="row">{item.id}</th>
                 <td><img className="img_carrito" alt="imagen en el carrito" src={item.imagen}></img></td>
                 <td>{item.titulo}</td>
                 <td>${item.precio} c/u</td>
-                <td>{item.qtyItem} item's</td>
+                <td>{item.qtyItem} item/s</td>
               </tr>
             </tbody>
           </table>)
+        }
+
+        {
+          test.cartList.length === 0
+          ? <button className="btn_seguir_comprando"><Link to="/">Ir al listado</Link></button>
+          : <button className="btn_vaciar_carrito" onClick={test.removeList}>VACIAR CARRITO</button>
         }
 
         {
@@ -83,16 +90,10 @@ const Cart = () => {
             <h1>ORDER SUMMARY</h1>
             <hr />
             <h3>TOTAL:</h3>
-            <span>{test.calcTotal()}</span>
+            <span>${test.calcTotal()}</span>
             <hr />
             <button className="btn_detail" onClick={createOrder}>CHECKOUT NOW</button>
           </div>
-        }
-
-        {
-          test.cartList.length === 0
-          ? <button className="btn_seguir_comprando"><Link to="/">Ir al listado</Link></button>
-          : <p className="parrafo_compra_carrito">¡GRACIAS POR CONFIAR EN NOSOTROS!</p>
         }
         </>
     )
