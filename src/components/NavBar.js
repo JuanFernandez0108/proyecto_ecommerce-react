@@ -7,7 +7,7 @@ const NavBar = () => {
     <>
     <nav className="navbar navbar-expand-lg bg-warning">
   <div className="container-fluid">
-    <span className="navbar-brand"><Link to="/">Oli Oli - PetStore</Link></span>
+    <span className="navbar-brand"><Link to="/"><img className="logo_navbar" src="https://i.ibb.co/3CxL61N/logofinal02.png"></img>Oli Oli - PetStore</Link></span>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>

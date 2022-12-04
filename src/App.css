@@ -116,6 +116,7 @@ button {
   padding: 5px;
   border-radius: 10px;
   transition-duration: 0.3s;
+  margin: 0 20px;
 }
 
 .btn_delete {
@@ -195,16 +196,66 @@ button {
 /* ##########--ORDEN SUMMARY inicio --########## */
 
 .container_orden {
-  background-color: rgb(253, 175, 175);
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 0% 100% 0% 100% / 65% 24% 76% 35%;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   align-items: center;
   margin: 3em auto;
   width: 700px;
   height: 290px;
+  display: flex;
+  flex-direction: column;
+}
+
+.total_precio {
+  font-weight: 600;
+  font-size: 1.5em;
+  color: rgb(15, 175, 15);
+}
+
+.total_items {
+  font-weight: 600;
+  font-size: 1.5em;
+  color: rgb(153, 85, 218);
+  margin: 3px 0;
+}
+
+.total_titulo {
+  font-size: 1.3em;
+  margin: 0px;
+}
+
+.cantidad_titulo {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+.resumen_pedido_titulo {
+  font-weight: 600;
 }
 
 
 /* ##########--ORDEN SUMMARY fin --########## */
 
+/* ##########--resumen de carrito inicio --########## */
+
 .img_carrito {
   height: 200px;
+}
+
+.carrito_precio {
+  color: rgb(15, 175, 15);
+}
+
+.carrito_items {
+  color: rgb(153, 85, 218);
+}
+/* ##########--resumen de carrito fin --########## */
+
+.logo_navbar {
+  width: 32px;
+  margin-right: 10px;
 }

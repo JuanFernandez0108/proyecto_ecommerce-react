@@ -50,8 +50,6 @@ const Cart = () => {
 
     return(
         <>
-        <h1>SOY UN CARRITO</h1>
-        <hr />
         {
             test.cartList.length === 0 
             ? <li className="carrito_vacio_text"><SentimentVeryDissatisfiedIcon /> No agregaste ningun producto al carrito <SentimentVeryDissatisfiedIcon /></li>
@@ -68,11 +66,11 @@ const Cart = () => {
             </thead>
             <tbody>
               <tr>
-                <th scope="row">{item.id}</th>
+                <td scope="row">{item.id}</td>
                 <td><img className="img_carrito" alt="imagen en el carrito" src={item.imagen}></img></td>
-                <td>{item.titulo}</td>
-                <td>${item.precio} c/u</td>
-                <td>{item.qtyItem} item/s</td>
+                <td className="carrito_nombre">{item.titulo}</td>
+                <td className="carrito_precio">${item.precio} c/u</td>
+                <td className="carrito_items">{item.qtyItem} item/s</td>
               </tr>
             </tbody>
           </table>)
@@ -87,12 +85,12 @@ const Cart = () => {
         {
           test.cartList.length > 0 &&
           <div className="container_orden">
-            <h1>Resumen de su pedido</h1>
+            <h1 className="resumen_pedido_titulo">Resumen de su pedido</h1>
             <hr />
-            <h3>Cantidad de productos:</h3>
-            <span>{test.calcItemsQty()} item/s</span>
-            <h3>TOTAL:</h3>
-            <span>${test.calcTotal()}</span>
+            <h3 className="cantidad_titulo">Cantidad de productos:</h3>
+            <span className="total_items">{test.calcItemsQty()} item/s</span>
+            <h3 className="total_titulo">Total a pagar:</h3>
+            <span className="total_precio">${test.calcTotal()}</span>
             <hr />
             <button className="btn_detail" onClick={createOrder}>FINALIZAR COMPRA</button>
           </div>
