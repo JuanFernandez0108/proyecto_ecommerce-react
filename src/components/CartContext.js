@@ -37,17 +37,17 @@ const CartContextProvider = ({ children }) => {
     }
 
     const deleteItem = (id) => {
-        let resultado = cartList.filter(item => item.idItem !== id);
+        let resultado = cartList.filter(item => item.id !== id);
         setCartList(resultado);
     }
 
-    const calcTotalPerItem = (idItem) => {
-        let index = cartList.map(item => item.idItem).indexOf(idItem);
-        return cartList[index].costItem * cartList[index].qtyItem;
+    const calcTotalPerItem = (id) => {
+        let index = cartList.map(item => item.id).indexOf(id);
+        return cartList[index].precio * cartList[index].qtyItem;
     }
 
     const calcSubTotal = () => {
-        let totalPerItem = cartList.map(item => calcTotalPerItem(item.idItem));
+        let totalPerItem = cartList.map(item => calcTotalPerItem(item.id));
         return totalPerItem.reduce(((previousValue, currentValue) => previousValue + currentValue),0);
     }
 

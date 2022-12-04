@@ -3,9 +3,8 @@ import { CartContext } from './CartContext'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Link } from 'react-router-dom';
 import { serverTimestamp } from 'firebase/firestore';
-import { doc, setDoc } from "firebase/firestore"; 
+import { collection, doc, setDoc, updateDoc, increment } from "firebase/firestore"; 
 import db from '../utils/firebaseConfig';
-import { collection, getDocs } from "firebase/firestore";
 
 const Cart = () => {
     const test = useContext(CartContext);
@@ -19,7 +18,7 @@ const Cart = () => {
         },
         date: serverTimestamp(),
         items: test.cartList.map(item => ({
-          id: item.idItem,
+          id: item.id,
           precio: item.precio,
           titulo: item.titulo,
           qty: item.qtyItem
@@ -34,7 +33,18 @@ const Cart = () => {
         return newOrderReferencia
       }
       createOrderInFirestore()
-      .then(response => alert('Orden ID = ' + response.id))
+      .then(response => {
+        alert('Orden ID = ' + response.id)
+        // actualizar stock y descontar qty
+        test.cartList.forEach(async (item) => {
+          const itemReferencia = doc(db, "productos", item.id);
+          await updateDoc(itemReferencia, {
+            stock: increment(-item.qtyItem) // logica = stock: stock - item.qty
+          });
+        });
+        // Luego de actualizar el stock en la db, borrar el carrito de compras
+        test.removeList();
+      })
       .catch(err => console.log(err));
     }
 
@@ -72,8 +82,6 @@ const Cart = () => {
           <div className="container_orden">
             <h1>ORDER SUMMARY</h1>
             <hr />
-            <h2>Subtotal</h2>
-            <span>{test.calcSubTotal()}</span>
             <h3>TOTAL:</h3>
             <span>{test.calcTotal()}</span>
             <hr />

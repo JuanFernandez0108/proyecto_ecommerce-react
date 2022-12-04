@@ -1,8 +1,6 @@
 import ItemList from '../components/ItemList';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { collection, getDocs } from "firebase/firestore"; 
-import { db } from '../utils/firebaseConfig';
 import { firestoreFetch } from '../utils/firestoreFetch';
 
 
