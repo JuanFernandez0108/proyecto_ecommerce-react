@@ -87,12 +87,14 @@ const Cart = () => {
         {
           test.cartList.length > 0 &&
           <div className="container_orden">
-            <h1>ORDER SUMMARY</h1>
+            <h1>Resumen de su pedido</h1>
             <hr />
+            <h3>Cantidad de productos:</h3>
+            <span>{test.calcItemsQty()} item/s</span>
             <h3>TOTAL:</h3>
             <span>${test.calcTotal()}</span>
             <hr />
-            <button className="btn_detail" onClick={createOrder}>CHECKOUT NOW</button>
+            <button className="btn_detail" onClick={createOrder}>FINALIZAR COMPRA</button>
           </div>
         }
         </>

@@ -84,19 +84,27 @@ button {
 }
 
 .btn-4 {
-  background: rgb(112, 222, 255);
-  background: linear-gradient(0deg, rgba(112, 222, 255) 0%, rgb(185, 218, 255) 100%);
+  background: rgb(255, 187, 0);
   width: 100px;
   height: 35px;
   line-height: 14px;
   padding: 5px;
   border-radius: 10px;
-  transition-duration: 0.9s;
+  transition-duration: 0.6s;
   margin: 0px 2px;
 }
 
 .btn-4:hover{
   background:rgb(186, 102, 255);
+  color: white;
+}
+
+.btn-4 a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn-4 a:hover {
   color: white;
 }
 

@@ -35,8 +35,10 @@ section {
   .details {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     padding: 15px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .details h5 {
