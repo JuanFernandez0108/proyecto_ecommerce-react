@@ -161,3 +161,16 @@ button {
   border-radius: 10px;
   transition-duration: 0.3s;
 }
+
+/* ##########--ITEM DETAIL fin --########## */
+
+/* ##########--ORDEN SUMMARY inicio --########## */
+
+.container_orden {
+  background-color: rgb(253, 175, 175);
+  align-items: center;
+  margin: 3em auto;
+  width: 700px;
+  height: 290px;
+}
+

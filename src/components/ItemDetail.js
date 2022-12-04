@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ item }) => {
     const [itemCount, setItemCount] = useState(0);
-    const { addToCart } = useContext(CartContext);
+    const test = useContext(CartContext);
 
     const onAdd = (qty) => {
         alert("Seleccionaste " + qty + " productos.");
         setItemCount(qty);
-        addToCart(item, qty)
+        test.addToCart(item, qty)
     }
 
     return(

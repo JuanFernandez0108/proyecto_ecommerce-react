@@ -9,32 +9,35 @@ const CartContextProvider = ({ children }) => {
         // preguntar si item ya existe en el array (si ya existe no colocarlo)
         // si no existe recien ahi colocar el item
         let encontrado = cartList.find(product => product.id === item.id);
-        if ( encontrado === undefined) {
-            setCartList([
-                ...cartList,
-                {
-                    id: item.id,
-                    imagen: item.imagen[0],
-                    titulo: item.titulo,
-                    precio: item.precio,
-                    qtyItem: qty
-                }
-            ]);
+        if (encontrado) {
+        const carritoActualizado = cartList.map((prod)=>{
+            if(prod.id === item.id){
+                return {...prod, qty: prod.qtyItem + qty}
+            }
+           })
+           setCartList(carritoActualizado)
+        
         } else {
-            // si fue encontrado se aumenta el qty del producto
-            encontrado.qtyItem += qty;
-            setCartList([
-                ...cartList
-            ]);
+        // si fue encontrado se aumenta el qty del producto
+        setCartList([
+            ...cartList,
+            {
+            id: item.id,
+            imagen: item.imagen,
+            titulo: item.titulo,
+            precio: item.precio,
+            qtyItem: qty,
+            }
+        ])
         }
-    }
+        }
 
     const removeList = () => {
         setCartList([]);
     }
 
     const deleteItem = (id) => {
-        let resultado = cartList.filter(item => item.idItem != id);
+        let resultado = cartList.filter(item => item.idItem !== id);
         setCartList(resultado);
     }
 
@@ -53,8 +56,7 @@ const CartContextProvider = ({ children }) => {
     }
 
     const calcItemsQty = () => {
-        let qtys = cartList.map(item => item.qty);
-        return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue), 0);
+        return cartList.reduce(((acc, prod) => acc + prod.qtyItem), 0);
     }
 
     return(

@@ -2,9 +2,40 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import { Link } from 'react-router-dom';
+import { serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc } from "firebase/firestore"; 
+import db from '../utils/firebaseConfig';
+import { collection, getDocs } from "firebase/firestore";
 
 const Cart = () => {
     const test = useContext(CartContext);
+
+    const createOrder = () => {
+      let order = {
+        buyer: {
+          name: 'Leo Mechi',
+          email: 'leomechi@josmeil.com',
+          phone: '1122233622'
+        },
+        date: serverTimestamp(),
+        items: test.cartList.map(item => ({
+          id: item.idItem,
+          precio: item.precio,
+          titulo: item.titulo,
+          qty: item.qtyItem
+        })),
+        total: test.calcTotal()
+      }
+      // console.log(order)
+      
+      const createOrderInFirestore = async () => {
+        const newOrderReferencia = doc(collection(db, 'orders'));
+        await setDoc(newOrderReferencia, order);
+      }
+      createOrderInFirestore()
+      .then(console.log('orden creada'))
+      .catch(err => console.log(err));
+    }
 
     return(
         <>
@@ -13,7 +44,7 @@ const Cart = () => {
         {
             test.cartList.length === 0 
             ? <li className="carrito_vacio_text"><SentimentVeryDissatisfiedIcon /> No agregaste ningun producto al carrito <SentimentVeryDissatisfiedIcon /></li>
-            : test.cartList.map(item => <table class="table">
+            : test.cartList.map(item => <table className="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -23,17 +54,32 @@ const Cart = () => {
                 <th scope="col">Cantidad</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody key={item.id}>
               <tr>
                 <th scope="row">{item.id}</th>
-                <td>{item.imagen}</td>
+                <td><img alt="imagen en el carrito" src={item.imagen}></img></td>
                 <td>{item.titulo}</td>
-                <td>${item.precio}</td>
-                <td>{item.qtyItem}</td>
+                <td>${item.precio} c/u</td>
+                <td>{item.qtyItem} item's</td>
               </tr>
             </tbody>
           </table>)
         }
+
+        {
+          test.cartList.length > 0 &&
+          <div className="container_orden">
+            <h1>ORDER SUMMARY</h1>
+            <hr />
+            <h2>Subtotal</h2>
+            <span>{test.calcSubTotal()}</span>
+            <h3>TOTAL:</h3>
+            <span>{test.calcTotal()}</span>
+            <hr />
+            <button className="btn_detail" onClick={createOrder}>CHECKOUT NOW</button>
+          </div>
+        }
+
         {
           test.cartList.length === 0
           ? <button className="btn_seguir_comprando"><Link to="/">Ir al listado</Link></button>
