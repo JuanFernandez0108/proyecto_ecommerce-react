@@ -21,6 +21,8 @@ Esta web esta realizada con:
 
 ## Librerias
 
+Se usaron las siguientes librerias:
+
 (*) Firebase
 
 (*) Material UI
