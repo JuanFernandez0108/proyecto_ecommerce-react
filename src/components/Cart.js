@@ -31,9 +31,10 @@ const Cart = () => {
       const createOrderInFirestore = async () => {
         const newOrderReferencia = doc(collection(db, 'orders'));
         await setDoc(newOrderReferencia, order);
+        return newOrderReferencia
       }
       createOrderInFirestore()
-      .then(console.log('orden creada'))
+      .then(response => alert('Orden ID = ' + response.id))
       .catch(err => console.log(err));
     }
 
@@ -57,7 +58,7 @@ const Cart = () => {
             <tbody key={item.id}>
               <tr>
                 <th scope="row">{item.id}</th>
-                <td><img alt="imagen en el carrito" src={item.imagen}></img></td>
+                <td><img className="img_carrito" alt="imagen en el carrito" src={item.imagen}></img></td>
                 <td>{item.titulo}</td>
                 <td>${item.precio} c/u</td>
                 <td>{item.qtyItem} item's</td>
