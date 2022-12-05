@@ -8,7 +8,7 @@ import db from '../utils/firebaseConfig';
 
 const Cart = () => {
     const test = useContext(CartContext);
-
+    console.log(test.Cart)
     const createOrder = () => {
       let order = {
         buyer: {
@@ -66,7 +66,7 @@ const Cart = () => {
             </thead>
             <tbody>
               <tr>
-                <td scope="row">{item.id}</td>
+                <th scope="row">{item.id}</th>
                 <td><img className="img_carrito" alt="imagen en el carrito" src={item.imagen}></img></td>
                 <td className="carrito_nombre">{item.titulo}</td>
                 <td className="carrito_precio">${item.precio} c/u</td>
