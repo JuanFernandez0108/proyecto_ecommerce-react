@@ -8,7 +8,7 @@ import db from '../utils/firebaseConfig';
 
 const Cart = () => {
     const test = useContext(CartContext);
-    console.log(test.Cart)
+    
     const createOrder = () => {
       let order = {
         buyer: {
@@ -17,11 +17,11 @@ const Cart = () => {
           phone: '1122233622'
         },
         date: serverTimestamp(),
-        items: test.cartList.map(item => ({
+        items: test.cart.map(item => ({
           id: item.id,
           precio: item.precio,
           titulo: item.titulo,
-          qty: item.qtyItem
+          count: item.count
         })),
         total: test.calcTotal()
       }
@@ -36,10 +36,10 @@ const Cart = () => {
       .then(response => {
         alert('Orden ID = ' + response.id)
         // actualizar stock y descontar qty
-        test.cartList.forEach(async (item) => {
+        test.cart.forEach(async (item) => {
           const itemReferencia = doc(db, "productos", item.id);
           await updateDoc(itemReferencia, {
-            stock: increment(-item.qtyItem) // logica = stock: stock - item.qty
+            stock: increment(-item.count) // logica = stock: stock - item.qty
           });
         });
         // Luego de actualizar el stock en la db, borrar el carrito de compras
@@ -51,9 +51,9 @@ const Cart = () => {
     return(
         <>
         {
-            test.cartList.length === 0 
-            ? <li className="carrito_vacio_text"><SentimentVeryDissatisfiedIcon /> No agregaste ningun producto al carrito <SentimentVeryDissatisfiedIcon /></li>
-            : test.cartList.map(item => <table className="table" key={item.id}>
+            test.cart.length === 0 
+            ? <p className="carrito_vacio_text"><SentimentVeryDissatisfiedIcon /> No agregaste ningun producto al carrito <SentimentVeryDissatisfiedIcon /></p>
+            : test.cart.map(item => <table className="table" key={item.id}>
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -70,20 +70,20 @@ const Cart = () => {
                 <td><img className="img_carrito" alt="imagen en el carrito" src={item.imagen}></img></td>
                 <td className="carrito_nombre">{item.titulo}</td>
                 <td className="carrito_precio">${item.precio} c/u</td>
-                <td className="carrito_items">{item.qtyItem} item/s</td>
+                <td className="carrito_items">{item.count} item/s</td>
               </tr>
             </tbody>
           </table>)
         }
 
         {
-          test.cartList.length === 0
+          test.cart.length === 0
           ? <button className="btn_seguir_comprando"><Link to="/">Ir al listado</Link></button>
           : <button className="btn_vaciar_carrito" onClick={test.removeList}>VACIAR CARRITO</button>
         }
 
         {
-          test.cartList.length > 0 &&
+          test.cart.length > 0 &&
           <div className="container_orden">
             <h1 className="resumen_pedido_titulo">Resumen de su pedido</h1>
             <hr />
